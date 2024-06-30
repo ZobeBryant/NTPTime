@@ -1,0 +1,35 @@
+{
+  "name": "ntptime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/TimeOrigin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build:dev": "npm run clean && cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "server":"node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZobeBryant/NTPTime.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZobeBryant/NTPTime/issues"
+  },
+  "homepage": "https://github.com/ZobeBryant/NTPTime#readme",
+  "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-loader": "^8.2.2",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "express": "^4.19.2",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.3.5",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

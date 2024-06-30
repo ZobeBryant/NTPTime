@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/dist/TimeOrigin.js"></script>
+  </head>
+  <body>
+    <button id="setNtpMode" onclick="setNtpMode()">Set NTP Mode</button>
+    <button id="getNtpTime" onclick="setNtpTime()">Get NTP Time</button>
+    <script>
+      const setNtpMode = () => {
+        if (window.timeOrigin) return;
+        const timeOrigin = new TimeOrigin();
+        window.timeOrigin = timeOrigin;
+        timeOrigin.setOriginTimetick();
+      };
+      const setNtpTime = () => {
+        if (!window.timeOrigin) {
+          alert("Please set NTP mode first");
+          return;
+        }
+        let nowNtpTime = window.timeOrigin.getNTPTime();
+        console.log(nowNtpTime, new Date(nowNtpTime));
+        alert(nowNtpTime);
+        alert(new Date(nowNtpTime));
+      };
+    </script>
+  </body>
+</html>
