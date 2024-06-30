@@ -8,7 +8,7 @@
   </head>
   <body>
     <button id="setNtpMode" onclick="setNtpMode()">Set NTP Mode</button>
-    <button id="getNtpTime" onclick="setNtpTime()">Get NTP Time</button>
+    <button id="getNtpTime" onclick="getNtpTime()">Get NTP Time</button>
     <script>
       const setNtpMode = () => {
         if (window.timeOrigin) return;
@@ -16,7 +16,7 @@
         window.timeOrigin = timeOrigin;
         timeOrigin.setOriginTimetick();
       };
-      const setNtpTime = () => {
+      const getNtpTime = () => {
         if (!window.timeOrigin) {
           alert("Please set NTP mode first");
           return;
